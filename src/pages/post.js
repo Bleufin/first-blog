@@ -3,7 +3,6 @@ import { Redirect, useParams } from "react-router-dom";
 
 const Post = () => {
   const slug = useParams().slug;
-  console.log(slug);
   const postSlugs = ["my-first-blog-post", "my-second-blog-post"];
 
   const postDoesNotExist = postSlugs.indexOf(slug) === -1;
