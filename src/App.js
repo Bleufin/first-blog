@@ -16,9 +16,15 @@ function App() {
       </nav>
       <main>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/404" component={NoMatch} />
-          <Route path="/:slug" component={Post} />
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/404">
+            <NoMatch />
+          </Route>
+          <Route path="/:slug">
+            <Post />
+          </Route>
         </Switch>
       </main>
     </Router>
