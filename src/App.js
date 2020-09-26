@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./pages/home";
 import Post from "./pages/post";
 import NoMatch from "./pages/no-match";
+import Create from "./pages/create";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/404">
+            <Create />
           </Route>
           <Route path="/404">
             <NoMatch />
