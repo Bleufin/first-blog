@@ -10,14 +10,15 @@ const Home = () => {
     getFirebase()
       .database()
       .ref("/posts")
-      .orderByChild("dateFormatted")
+      .orderByChild("created")
       .once("value")
       .then(snapshot => {
-        let posts = [];
-        const snapshotVal = snapshot.val();
-        for (let slug in snapshotVal) {
-          posts.push(snapshotVal[slug]);
-        }
+        const posts = [];
+        snapshot.forEach(childSnapshot => {
+          const post = childSnapshot.val();
+          let id = childSnapshot.ref_.path.pieces_[1];
+          posts.push({ id, ...post });
+        });
 
         const newestFirst = posts.reverse();
         setBlogPosts(newestFirst);

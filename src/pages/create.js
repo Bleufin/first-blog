@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import firebase from "firebase/app";
 import { getFirebase } from "../firebase";
 import { useHistory } from "react-router-dom";
 
@@ -28,7 +29,7 @@ const generateDate = () => {
     month = `0${month}`; // prepend with a 0
   }
 
-  const day = now.getDate();
+  let day = now.getDate();
   if (day < 10) {
     day = `0${day}`; // prepend with a 0
   }
@@ -57,6 +58,7 @@ const Create = () => {
       slug,
       coverImage,
       coverImageAlt,
+      created: firebase.database.ServerValue.TIMESTAMP,
       content
     };
     getFirebase()
