@@ -4,6 +4,7 @@ main {
 }
 
 nav {
+  display: flex;
   background-color: #039be5;
 }
 
@@ -14,6 +15,7 @@ nav a {
 nav a h2 {
   color: #ffffff;
   margin: 0;
+  margin-right: 50px;
 }
 
 main {

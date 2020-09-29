@@ -12,7 +12,10 @@ function App() {
     <Router>
       <nav>
         <Link to="/">
-          <h2>My React + Firebase Blog</h2>
+          <h2>Posts</h2>
+        </Link>
+        <Link to="/create">
+          <h2>Create a new post</h2>
         </Link>
       </nav>
       <main>
@@ -20,7 +23,7 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/404">
+          <Route path="/create">
             <Create />
           </Route>
           <Route path="/404">
