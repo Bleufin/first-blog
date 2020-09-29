@@ -34,22 +34,24 @@ const Home = () => {
     <>
       <h1>Blog posts</h1>
       <p>All Posts, latest on top.</p>
-      {blogPosts.map(blogPost => (
-        <section key={blogPost.slug} className="card">
-          <img src={blogPost.coverImage} alt={blogPost.coverImageAlt} />
-          <div className="card-content">
-            <h2>
-              {blogPost.title} &mdash; <span style={{ color: "#5e5e5e" }}>{blogPost.datePretty}</span>
-            </h2>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: `${blogPost.content.substring(0, 200)}...`
-              }}
-            ></p>
-            <Link to={`/${blogPost.slug}`}>Continue reading...</Link>
-          </div>
-        </section>
-      ))}
+      <div className="blogs">
+        {blogPosts.map(blogPost => (
+          <section key={blogPost.slug} className="card">
+            <img src={blogPost.coverImage} alt={blogPost.coverImageAlt} />
+            <div className="card-content">
+              <h2>
+                {blogPost.title} &mdash; <span style={{ color: "#5e5e5e" }}>{blogPost.datePretty}</span>
+              </h2>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: `${blogPost.content.substring(0, 40)}...`
+                }}
+              ></p>
+              <Link to={`/${blogPost.slug}`}>Continue reading...</Link>
+            </div>
+          </section>
+        ))}
+      </div>
     </>
   );
 };

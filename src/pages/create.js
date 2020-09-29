@@ -71,8 +71,11 @@ const Create = () => {
 
   return (
     <>
-      <h1>Create a new post</h1>
-      <section style={{ margin: "2rem 0" }}>
+      <div style={{ margin: "auto", textAlign: "center" }}>
+        <h1>Create a new post</h1>
+      </div>
+
+      <section style={{ margin: "auto", maxWidth: "700px" }}>
         <label style={labelStyles} htmlFor="title-field">
           Title
         </label>
